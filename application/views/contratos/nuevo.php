@@ -188,7 +188,7 @@ if ($tipo=='updU'){
                       <input type="text" class="form-control" id="obj" name="obj" required>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Supervicion:</label>
+                      <label for="exampleInputPassword1">Supervision:</label>
                       <input type="text" class="form-control" id="super" name="super" >
                     </div>
                     <div class="form-group">
