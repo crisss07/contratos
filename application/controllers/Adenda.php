@@ -65,7 +65,7 @@ class Adenda extends CI_Controller {
 				
 
 				$this->Adenda_model->insertar_adenda($tipo, $categoria, $beneficiario, $empresa, $ent_financiera, $no_contrato, $moneda, $monto, $objeto, $supervicion, $inicio, $fin, $id_contrato, $respaldo, $forma_pago);
-				//redirect('bloque_grupo_mat');
+				redirect(base_url());
 			}
 		}
 	}
