@@ -14,7 +14,7 @@ class Admin_model extends CI_Model {
 		{
 			return $query->row();
 		}else{
-			return '';
+			return 'hoa';
 		}
 	}
 }
