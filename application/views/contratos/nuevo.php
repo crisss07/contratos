@@ -141,7 +141,7 @@ if ($tipo=='updU'){
                     <div class="form-group">
                       <!-- <input type="text" class="form-control" id="enf" name="enf" placeholder="Entidad Financiera" required> -->
                       <input type="radio" name="fuente" value="BID">&nbsp;BID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <input type="radio" name="fuente" value="CTR">&nbsp;CTR
+                      <input type="radio" name="fuente" value="CTR">&nbsp;TGN
                     </div>
 
                     <label for="exampleInputPassword1">Numero de Contrato:</label>
@@ -193,7 +193,7 @@ if ($tipo=='updU'){
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Forma de Pago:</label>
-                      <input type="text" class="form-control" id="obs" name="obs" >
+                      <input type="text" class="form-control" id="forma_pago" name="obs" >
                     </div>
                   </div>
                   
