@@ -193,7 +193,7 @@ if ($tipo=='updU'){
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Forma de Pago:</label>
-                      <input type="text" class="form-control" id="forma_pago" name="obs" >
+                      <input type="text" class="form-control" id="forma_pago" name="forma_pago" >
                     </div>
                   </div>
                   
