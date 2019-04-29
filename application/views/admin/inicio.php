@@ -42,7 +42,7 @@ foreach($boletas as $row){
           <div class="small-box bg-green">
             <div class="inner">
               <h3><?php echo $reg;?></h3>
-              <p>Boletas Normales</p>
+              <p>Registrados</p>
             </div>
             <div class="icon">
               <i class="fa fa-folder"></i>
@@ -55,7 +55,7 @@ foreach($boletas as $row){
           <div class="small-box bg-blue">
             <div class="inner">
               <h3><?php echo $a15;?></h3>
-              <p>Boletas a 15 Dias</p>
+              <p>Concluyen en 15 Dias</p>
             </div>
             <div class="icon">
               <i class="fa fa-folder"></i>
@@ -69,7 +69,7 @@ foreach($boletas as $row){
             <div class="inner">
               <h3><?php echo $a10;?></h3>
 
-              <p>Boletas a 10 Dias</p>
+              <p>Concluyen en 10 Dias</p>
             </div>
             <div class="icon">
               <i class="fa fa-folder"></i>
@@ -83,7 +83,7 @@ foreach($boletas as $row){
             <div class="inner">
               <h3><?php echo $a5;?></h3>
 
-              <p>Boletas a 5 Dias</p>
+              <p>concluyen en 5 Dias</p>
             </div>
             <div class="icon">
               <i class="fa fa-folder"></i>
@@ -97,7 +97,7 @@ foreach($boletas as $row){
             <div class="inner">
               <h3><?php echo $lib;?></h3>
 
-              <p>Boletas Liberadas</p>
+              <p>Concluidas</p>
             </div>
             <div class="icon">
               <i class="fa fa-folder"></i>
