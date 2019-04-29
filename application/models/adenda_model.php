@@ -23,7 +23,7 @@ class Adenda_model extends CI_Model {
 		}
 	}
 
-	public function insertar_adenda($tipo, $categoria, $beneficiario, $empresa, $ent_financiera, $no_contrato, $moneda, $monto, $objeto, $supervicion, $inicio, $fin, $id_contrato, $respaldo)
+	public function insertar_adenda($tipo, $categoria, $beneficiario, $empresa, $ent_financiera, $no_contrato, $moneda, $monto, $objeto, $supervicion, $inicio, $fin, $id_contrato, $respaldo, $forma_pago)
 	{	
 		
 		$array = array(
@@ -40,7 +40,9 @@ class Adenda_model extends CI_Model {
 			'inicio' =>$inicio,
 			'fin' =>$fin,
 			'id_contrato' =>$id_contrato,
-			'respaldo' =>$respaldo
+			'respaldo' =>$respaldo,
+			'forma_pago' =>$forma_pago
+
 			);
 		$this->db->insert('adenda', $array);
 	}
