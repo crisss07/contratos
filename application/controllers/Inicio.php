@@ -8,6 +8,7 @@ class inicio extends CI_Controller {
 		$this->load->model('admin_model');
 		$this->load->model('usuario_model');
 		$this->load->model('boletas_model');
+		$this->load->model('contrato_model');
 		$this->load->model('vigencias_model');
 		$this->load->helper('form');
 		$this->load->database('default');
@@ -19,10 +20,8 @@ class inicio extends CI_Controller {
 			redirect('inicio/login','refresh');
 		}
 		else{
-			$data = array(
-				'boletas' => $this->boletas_model->getBoletas(),
-				'tipo'=>0,
-			);
+			
+			$data['contrato'] = $this->contrato_model->getContrato();	
 			$this->load->view('common/header');
 			$this->load->view('common/sidebar');
 			$this->load->view('admin/inicio',$data);
