@@ -30,10 +30,21 @@ class Detalle_cont extends CI_Controller {
 	{	
 		if (!$this->session->userdata('is_logued_in'))
 			redirect('inicio/login','refresh');
-		$data['detalle_adenda'] = $this->dashboard_model->getadenda();		
+		$data['detalle_adenda'] = $this->dashboard_model->getadenda($id);		
 		$this->load->view('common/header');
 		$this->load->view('common/sidebar');
 		$this->load->view('list_adendas/listado',$data);
+		$this->load->view('common/footer');
+	}
+	public function contrato($id = null)
+	{	
+		if (!$this->session->userdata('is_logued_in'))
+			redirect('inicio/login','refresh');
+		$data['detalle_adenda'] = $this->dashboard_model->getadenda($id);
+		$data['d_contrato'] = $this->dashboard_model->getdatoscontrato($id);		
+		$this->load->view('common/header');
+		$this->load->view('common/sidebar');
+		$this->load->view('list_adendas/datos_contrato',$data);
 		$this->load->view('common/footer');
 	}
 }

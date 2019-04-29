@@ -16,5 +16,11 @@ class Dashboard_model extends CI_Model {
 			WHERE id_contrato=$id");
 		return $r->result();
 	}
+
+	function getdatoscontrato($id){
+		$r = $this->db->query("SELECT * FROM contrato 
+			WHERE id=$id");
+		return $r->row();
+	}
 }
 ?>

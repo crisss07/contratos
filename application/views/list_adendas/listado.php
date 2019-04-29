@@ -7,7 +7,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Listado de contratos</h3>
+              <h3 class="box-title">Listado de adendas</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -25,8 +25,7 @@
                   <th>Objeto</th>
                   <th>Inicio</th>
                   <th>Fin</th>
-                  <th>Total Adendas</th>
-                 
+                  
                 </tr>
                 </thead>
                 <tbody>
@@ -44,13 +43,12 @@
                     <td><?php echo $row->objeto;?></td>
                     <td><?php echo $row->inicio;?></td>       
                     <td><?php echo $row->fin;?></td>    
-                    <td>5</td>           
-                   
                   </tr>
                  
                 <?php }?>  
                 </tbody>
               </table>
+               <a class="btn btn-success" href="<?php echo site_url('inicio'); ?>" align="right">Volver</a>
             </div>
           </div>
         </div>
