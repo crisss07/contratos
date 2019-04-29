@@ -116,11 +116,11 @@
                     <td><?php echo $row->fin;?></td>    
                     <td>5</td>           
                     <td>
-                      <a href="<?php echo base_url('detalle_cont/contrato/').$row->id;?>"><span class="badge bg-light-green"><i class="fa fa-search"></i></span></a>                    
-                      <a href="<?php echo base_url('boleta/formulario/').$row->id;?>"><span class="badge bg-light-blue"><i class="fa fa-edit"></i></span></a>
-                      <a href="<?php echo base_url('detalle_cont/adenda/').$row->id;?>"><span class="badge bg-light-green"><i class="fa fa-search"></i> Listado de Adendas</span></a>
-                      <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id;?>"><span class="badge bg-green"><i class="fa fa-plus"></i> Agregar Adenda</span></a>
-                      <span class="badge bg-red eliminar2" data-id="<?php echo base_url('boleta/del_boleta/').$row->id;?>"><i class="fa fa-trash"></i></span>
+                      <a href="<?php echo base_url('detalle_cont/contrato/').$row->id_contrato;?>"><span class="badge bg-light-green"><i class="fa fa-search"></i></span></a>                    
+                      <a href="<?php echo base_url('boleta/formulario/').$row->id_contrato;?>"><span class="badge bg-light-blue"><i class="fa fa-edit"></i></span></a>
+                      <a href="<?php echo base_url('detalle_cont/adenda/').$row->id_contrato;?>"><span class="badge bg-light-green"><i class="fa fa-search"></i> Listado de Adendas</span></a>
+                      <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>"><span class="badge bg-green"><i class="fa fa-plus"></i> Agregar Adenda</span></a>
+                      <span class="badge bg-red eliminar2" data-id="<?php echo base_url('boleta/del_boleta/').$row->id_contrato;?>"><i class="fa fa-trash"></i></span>
                     
                     </td>
                   </tr>

@@ -19,7 +19,7 @@ class Dashboard_model extends CI_Model {
 
 	function getdatoscontrato($id){
 		$r = $this->db->query("SELECT * FROM contrato 
-			WHERE id=$id");
+			WHERE id_contrato=$id");
 		return $r->row();
 	}
 }

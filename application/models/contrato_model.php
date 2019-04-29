@@ -11,7 +11,7 @@ class Contrato_model extends CI_Model {
 		return $r->result();
 	}
 	function contador(){
-		$r = $this->db->query("SELECT COUNT(id) as total FROM contrato where estado=1");
+		$r = $this->db->query("SELECT COUNT(id_contrato) as total FROM contrato where estado=1");
 		return $r->row();
 	}
 }
