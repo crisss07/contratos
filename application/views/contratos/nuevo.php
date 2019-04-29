@@ -1,3 +1,11 @@
+<style type="text/css">
+  input[type="radio"] {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+      transform: scale(1.5);
+      padding-right: 10px;
+  }
+</style>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -80,7 +88,7 @@ if ($tipo=='updU'){
 <?php if($tipo=='reg'){?>
   <!-- Main content -->
   <section class="content">
-    <?php $att = array('id' => 'formBR','class'=>'','autocomplete'=>'off','enctype'=>'multipart/form-data'); echo form_open('boleta/add_boleta',$att); ?>
+    <?php $att = array('id' => 'formBR','class'=>'','autocomplete'=>'off','enctype'=>'multipart/form-data'); echo form_open('contratos/guarda_contrato',$att); ?>
       <div class="row">
         <!-- left column -->
         <div class="col-md-12">
@@ -97,7 +105,7 @@ if ($tipo=='updU'){
                       <div class="row">
                         <div class="col-sm-12">
                           <div class="form-group">
-                            <label>Tipo</label>
+                            <label>Contrato</label>
                             <select id="tipo" name="tipo" class="form-control" required <?php if($tip!=''){echo 'disabled';}?>>
                               <option disabled <?php if($tip==''){echo 'selected';}?>>Selecciona Tipo</option>
                               <option value="Boleta" <?php if($tip=='Boleta'){echo 'selected';}?>>Personal</option>
@@ -125,13 +133,15 @@ if ($tipo=='updU'){
                     </div>
                     <div class="form-group">
                       <label for="emp">Contratante:</label>
-                      <input <?php if($em!=''){?>readonly<?php }?> type="text" class="form-control" id="emp" name="emp" value="Programa de Mejora de la Gestión Municipal" required value="<?php echo $em;?>">
+                      <input <?php if($em!=''){?>readonly<?php }?> type="text" class="form-control" id="emp" name="emp" value="MINISTERIO DE OBRAS PUBLICAS, SERVICIOS Y VIVIENDA" required value="<?php echo $em;?>">
                     </div>    
                   </div>
                   <div class="col-md-6">
                     <label for="exampleInputPassword1">Fuente de financiamiento:</label>
                     <div class="form-group">
-                      <input type="text" class="form-control" id="enf" name="enf" placeholder="Entidad Financiera" required>
+                      <!-- <input type="text" class="form-control" id="enf" name="enf" placeholder="Entidad Financiera" required> -->
+                      <input type="radio" name="fuente" value="BID">&nbsp;BID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="radio" name="fuente" value="CTR">&nbsp;CTR
                     </div>
 
                     <label for="exampleInputPassword1">Numero de Contrato:</label>
@@ -175,17 +185,18 @@ if ($tipo=='updU'){
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputPassword1">Objeto:</label>
-                      <input type="text" class="form-control" id="obj" name="obj" rows="3" placeholder="Objeto" required>
+                      <input type="text" class="form-control" id="obj" name="obj" placeholder="Objeto" required>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Supervicion:</label>
-                      <input type="text" class="form-control" id="obs" name="obs" rows="3" placeholder="Observaciones">
+                      <input type="text" class="form-control" id="super" name="super" placeholder="Observaciones">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Forma de Pago:</label>
+                      <input type="text" class="form-control" id="obs" name="obs" placeholder="Observaciones">
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Forma de Pago:</label>
-                    <input type="text" class="form-control" id="obs" name="obs" rows="3" placeholder="Observaciones">
-                  </div>
+                  
               </div>    
             </div>
             <div class="col-md-6">

@@ -12,6 +12,7 @@ class Contratos extends CI_Controller {
 		$this->load->database('default');
 		$this->load->library('encrypt');
 		$this->load->library('user_agent');
+		$this->load->helper('vayes_helper');
 	}
 	public function index(){
 		if (!$this->session->userdata('is_logued_in'))
@@ -102,7 +103,20 @@ class Contratos extends CI_Controller {
 
 	public function guarda_contrato()
 	{
-		
+		// vdebug($this->input->post(), true, false, true);
+		$data = array(
+			'tipo'=>$this->input->post('tipo'),
+			'beneficiario'=>$this->input->post('afi'),
+			'empresa'=>$this->input->post('emp'),
+			'ent_financiera'=>$this->input->post('fuente'),
+			'no_contrato'=>$this->input->post('np1'),
+			'monto'=>$this->input->post('bs'),
+			'moneda'=>$this->input->post('moneda'),
+			'objeto'=>$this->input->post('obj'),
+			'supervision'=>$this->input->post('super'),
+		);
+		$this->db->insert('contrato', $data);
+		redirect(base_url('inicio/index'));
 	}
 
 	public function upd_boleta(){
