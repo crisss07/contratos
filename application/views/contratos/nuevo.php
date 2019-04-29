@@ -108,9 +108,9 @@ if ($tipo=='updU'){
                             <label>Contrato</label>
                             <select id="tipo" name="tipo" class="form-control" required <?php if($tip!=''){echo 'disabled';}?>>
                               <option disabled <?php if($tip==''){echo 'selected';}?>>Selecciona Tipo</option>
-                              <option value="Boleta" <?php if($tip=='Personal'){echo 'selected';}?>>Personal</option>
-                              <option value="Poliza" <?php if($tip=='Adquisicion'){echo 'selected';}?>>Adquisicion</option>
-                              <option value="Poliza" <?php if($tip=='Otro'){echo 'selected';}?>>Otros</option>
+                              <option value="Personal" <?php if($tip=='Personal'){echo 'selected';}?>>Personal</option>
+                              <option value="Adquisicion" <?php if($tip=='Adquisicion'){echo 'selected';}?>>Adquisicion</option>
+                              <option value="Otro" <?php if($tip=='Otro'){echo 'selected';}?>>Otros</option>
                             </select>
                           </div>
                         </div>
@@ -185,15 +185,15 @@ if ($tipo=='updU'){
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputPassword1">Objeto:</label>
-                      <input type="text" class="form-control" id="obj" name="obj" placeholder="Objeto" required>
+                      <input type="text" class="form-control" id="obj" name="obj" required>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Supervicion:</label>
-                      <input type="text" class="form-control" id="super" name="super" placeholder="Observaciones">
+                      <input type="text" class="form-control" id="super" name="super" >
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Forma de Pago:</label>
-                      <input type="text" class="form-control" id="obs" name="obs" placeholder="Observaciones">
+                      <input type="text" class="form-control" id="obs" name="obs" >
                     </div>
                   </div>
                   

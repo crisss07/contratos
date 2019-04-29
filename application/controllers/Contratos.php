@@ -104,6 +104,18 @@ class Contratos extends CI_Controller {
 	public function guarda_contrato()
 	{
 		// vdebug($this->input->post(), true, false, true);
+		$pdf = '';
+		$conf_file = array(
+			'upload_path' => './assets/respaldo',
+			'allowed_types'	=> 'pdf',
+			'encrypt_name' => true
+		);
+		$this->load->library('upload',$conf_file);
+		if($this->upload->do_upload("res")){
+			$data = array('upload_data' => $this->upload->data());
+			$pdf = $data['upload_data']['file_name'];
+		}
+
 		$data = array(
 			'tipo'=>$this->input->post('tipo'),
 			'beneficiario'=>$this->input->post('afi'),
@@ -114,6 +126,9 @@ class Contratos extends CI_Controller {
 			'moneda'=>$this->input->post('moneda'),
 			'objeto'=>$this->input->post('obj'),
 			'supervision'=>$this->input->post('super'),
+			'inicio'=>$this->input->post('ini'),
+			'respaldo'=> $pdf,
+			'fin'=>$this->input->post('fin')
 		);
 		$this->db->insert('contrato', $data);
 		redirect(base_url('inicio/index'));
