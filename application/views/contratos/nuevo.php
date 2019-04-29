@@ -108,9 +108,9 @@ if ($tipo=='updU'){
                             <label>Contrato</label>
                             <select id="tipo" name="tipo" class="form-control" required <?php if($tip!=''){echo 'disabled';}?>>
                               <option disabled <?php if($tip==''){echo 'selected';}?>>Selecciona Tipo</option>
-                              <option value="Boleta" <?php if($tip=='Boleta'){echo 'selected';}?>>Personal</option>
-                              <option value="Poliza" <?php if($tip=='Poliza'){echo 'selected';}?>>Adquisicion</option>
-                              <option value="Poliza" <?php if($tip=='Otros'){echo 'selected';}?>>Otros</option>
+                              <option value="Boleta" <?php if($tip=='Personal'){echo 'selected';}?>>Personal</option>
+                              <option value="Poliza" <?php if($tip=='Adquisicion'){echo 'selected';}?>>Adquisicion</option>
+                              <option value="Poliza" <?php if($tip=='Otro'){echo 'selected';}?>>Otros</option>
                             </select>
                           </div>
                         </div>

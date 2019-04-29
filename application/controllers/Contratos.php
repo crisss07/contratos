@@ -14,7 +14,7 @@ class Contratos extends CI_Controller {
 		$this->load->library('user_agent');
 		$this->load->helper('vayes_helper');
 	}
-	public function index(){
+	public function nuevo(){
 		if (!$this->session->userdata('is_logued_in'))
 			redirect('inicio/login','refresh');
 		$data =array(
@@ -109,7 +109,7 @@ class Contratos extends CI_Controller {
 			'beneficiario'=>$this->input->post('afi'),
 			'empresa'=>$this->input->post('emp'),
 			'ent_financiera'=>$this->input->post('fuente'),
-			'no_contrato'=>$this->input->post('np1'),
+			'no_contrato'=>$this->input->post('npl'),
 			'monto'=>$this->input->post('bs'),
 			'moneda'=>$this->input->post('moneda'),
 			'objeto'=>$this->input->post('obj'),
