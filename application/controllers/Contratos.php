@@ -50,7 +50,9 @@ class Contratos extends CI_Controller {
 		$this->load->view('admin/form_boletas', $data);
 		$this->load->view('common/footer', $data);
 	}
+
 	public function add_boleta(){
+
 		$pdf = '';
 		$conf_file = array(
 			'upload_path' => './assets/respaldo',
@@ -97,6 +99,12 @@ class Contratos extends CI_Controller {
 		else
 			$this->index();
 	}
+
+	public function guarda_contrato()
+	{
+		
+	}
+
 	public function upd_boleta(){
 		$pdf = '';
 		$conf_file = array(
