@@ -20,7 +20,7 @@ class inicio extends CI_Controller {
 			redirect('inicio/login','refresh');
 		}
 		else{
-			
+			$data['cant'] = $this->contrato_model->contador();
 			$data['contrato'] = $this->contrato_model->getContrato();	
 			$this->load->view('common/header');
 			$this->load->view('common/sidebar');
