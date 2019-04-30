@@ -29,5 +29,9 @@ WHERE DATEDIFF(fin,now())=10");
 WHERE DATEDIFF(fin,now())=15");
 		return $r->row();
 	}
+	function cont_listado(){
+		$r = $this->db->query("SELECT c.*,DATEDIFF(fin,now()) as dias  FROM contrato c
+WHERE DATEDIFF(fin,now())=3
+	}
 }
 ?>
