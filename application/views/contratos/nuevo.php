@@ -110,8 +110,8 @@ if ($tipo=='updU'){
                               <option disabled <?php if($tip==''){echo 'selected';}?>>Selecciona Tipo</option>
                               <option value="Consultoria" <?php if($tip=='Consultoria'){echo 'selected';}?>>Consultoria</option>
                               <option value="Bienes y Servicios" <?php if($tip=='Bienes y Servicios'){echo 'selected';}?>>Bienes y Servicios</option>
-                              <option value="Supervision" <?php if($tip=='Supervision'){echo 'selected';}?>>Supervisions</option>
-                              <option value="Ejecucion" <?php if($tip=='Ejecucion'){echo 'selected';}?>>Ejecucions</option>
+                              <option value="Supervision" <?php if($tip=='Supervision'){echo 'selected';}?>>Supervision</option>
+                              <option value="Ejecucion" <?php if($tip=='Ejecucion'){echo 'selected';}?>>Ejecucion</option>
                               <option value="Otro" <?php if($tip=='Otro'){echo 'selected';}?>>Otros</option>
                             </select>
                           </div>
