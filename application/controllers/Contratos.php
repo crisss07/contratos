@@ -129,7 +129,7 @@ class Contratos extends CI_Controller {
 			'inicio'=>$this->input->post('ini'),
 			'respaldo'=> $pdf,
 			'fin'=>$this->input->post('fin'),
-			'forma_pago'=>$this->input->post('forma_pago'),
+			// 'forma_pago'=>$this->input->post('forma_pago'),
 		);
 		$this->db->insert('contrato', $data);
 		redirect(base_url('inicio/index'));

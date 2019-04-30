@@ -108,8 +108,10 @@ if ($tipo=='updU'){
                             <label>Contrato</label>
                             <select id="tipo" name="tipo" class="form-control" required <?php if($tip!=''){echo 'disabled';}?>>
                               <option disabled <?php if($tip==''){echo 'selected';}?>>Selecciona Tipo</option>
-                              <option value="Personal" <?php if($tip=='Personal'){echo 'selected';}?>>Personal</option>
-                              <option value="Adquisicion" <?php if($tip=='Adquisicion'){echo 'selected';}?>>Adquisicion</option>
+                              <option value="Consultoria" <?php if($tip=='Consultoria'){echo 'selected';}?>>Consultoria</option>
+                              <option value="Bienes y Servicios" <?php if($tip=='Bienes y Servicios'){echo 'selected';}?>>Bienes y Servicios</option>
+                              <option value="Supervision" <?php if($tip=='Supervision'){echo 'selected';}?>>Supervisions</option>
+                              <option value="Ejecucion" <?php if($tip=='Ejecucion'){echo 'selected';}?>>Ejecucions</option>
                               <option value="Otro" <?php if($tip=='Otro'){echo 'selected';}?>>Otros</option>
                             </select>
                           </div>
@@ -191,10 +193,7 @@ if ($tipo=='updU'){
                       <label for="exampleInputPassword1">Supervision:</label>
                       <input type="text" class="form-control" id="super" name="super" >
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Forma de Pago:</label>
-                      <input type="text" class="form-control" id="forma_pago" name="forma_pago" >
-                    </div>
+                    
                   </div>
                   
               </div>    
