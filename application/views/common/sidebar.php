@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </a>
             <ul class="treeview-menu">
               <li><a href="<?php echo base_url('contratos/nuevo');?>"><i class="fa fa-plus"></i> Registro</a></li>
-              <li><a href="<?php echo base_url('detalle');?>"><i class="fa fa-search"></i> Listado</a></li>
+              <li><a href="<?php echo base_url();?>"><i class="fa fa-search"></i> Listado</a></li>
             </ul>
           </li>
           <li class="treeview">
