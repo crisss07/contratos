@@ -80,12 +80,7 @@
           					    <input type="file" accept="application/pdf" size="5" class="form-control" id="res" name="res" placeholder="Agregar Respaldo">
           					</div>
 
-                     <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Forma de Pago</label>
-                           <input type="text" class="form-control" id="forma_pago" name="forma_pago" placeholder="Forma de Pago" required>
-                          </div>
-                        </div>
+                     
                   </div>
                 </div>
               </div>
@@ -103,7 +98,7 @@
                       <textarea class="form-control" id="objeto" name="objeto" rows="3" placeholder="Objeto" required></textarea>
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control" id="supervicion" name="supervicion" rows="3" placeholder="Supervision"></textarea>
+                      <textarea class="form-control" id="supervision" name="supervision" rows="3" placeholder="Supervision"></textarea>
                     </div>
                   </div>
               </div>    

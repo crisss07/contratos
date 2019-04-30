@@ -69,15 +69,14 @@ class Adenda extends CI_Controller {
 				$moneda = $datos['moneda'];
 				$monto = $datos['monto'];
 				$objeto = $datos['objeto'];
-				$supervicion = $datos['supervicion'];
+				$supervision = $datos['supervision'];
 				$inicio = $datos['ini'];
 				$fin = $datos['fin'];
 				$id_contrato = $datos['id_contrato'];
 				$respaldo = $pdf;
-				$forma_pago = $datos['forma_pago'];
 				
 
-				$this->Adenda_model->insertar_adenda($tipo, $categoria, $beneficiario, $empresa, $ent_financiera, $no_contrato, $moneda, $monto, $objeto, $supervicion, $inicio, $fin, $id_contrato, $respaldo, $forma_pago);
+				$this->Adenda_model->insertar_adenda($tipo, $categoria, $beneficiario, $empresa, $ent_financiera, $no_contrato, $moneda, $monto, $objeto, $supervision, $inicio, $fin, $id_contrato, $respaldo);
 				redirect(base_url());
 			}
 		}
