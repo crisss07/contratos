@@ -102,7 +102,7 @@
                       <textarea class="form-control" id="objeto" name="objeto" rows="3" placeholder="Objeto" required></textarea>
                     </div>
                     <div class="form-group">
-                      <textarea class="form-control" id="supervicion" name="supervicion" rows="3" placeholder="Supervicion"></textarea>
+                      <textarea class="form-control" id="supervicion" name="supervicion" rows="3" placeholder="Supervision"></textarea>
                     </div>
                   </div>
               </div>    
