@@ -15,7 +15,7 @@
                 <thead>
                 <tr>
                   <th>#</th>
-                  <th>Tipo</th>
+                  <th>Tipo Adenda</th>
                   <th>Beneficiario</th>
                   <th>Empresa</th>
                   <th>Fuente</th>
@@ -33,7 +33,7 @@
                  <?php foreach ($detalle_adenda as $row) {?>
                   <tr>
                     <td><?php echo $i++; ?></td>
-                    <td><?php echo $row->tipo;?></td>
+                    <td><?php echo $row->categoria;?></td>
                     <td><?php echo $row->beneficiario;?></td>
                     <td><?php echo $row->empresa;?></td>
                     <td><?php echo $row->ent_financiera;?></td>
