@@ -12,62 +12,62 @@
             <div class="icon">
               <i class="fa fa-folder"></i>
             </div>
-            <a href="<?php echo base_url('detalle/listado/4');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
+            
           </div>
         </div>
         <div class="col-lg-2 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-blue">
             <div class="inner">
-              <h3>0</h3>
+              <h3><?php echo $cont_quince->total; ?></h3>
               <p>Concluye en 15 Dias</p>
             </div>
             <div class="icon">
               <i class="fa fa-folder"></i>
             </div>
-            <a href="<?php echo base_url('detalle/listado/1');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('inicio/cinco/15');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <div class="col-lg-2 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>0</h3>
+              <h3><?php echo $cont_diez->total; ?></h3>
 
               <p>Concluye en 10 Dias</p>
             </div>
             <div class="icon">
               <i class="fa fa-folder"></i>
             </div>
-            <a href="<?php echo base_url('detalle/listado/2');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('inicio/cinco/10');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <div class="col-lg-2 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>0</h3>
+              <h3><?php echo $cont_cinco->total; ?></h3>
 
               <p>concluye en 5 Dias</p>
             </div>
             <div class="icon">
               <i class="fa fa-folder"></i>
             </div>
-            <a href="<?php echo base_url('detalle/listado/3');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('inicio/cinco/5');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <div class="col-lg-2 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-light-blue">
             <div class="inner">
-              <h3>0</h3>
+              <h3><?php echo $cont_cero->total; ?></h3>
 
               <p>Concluida</p>
             </div>
             <div class="icon">
               <i class="fa fa-folder"></i>
             </div>
-            <a href="<?php echo base_url('detalle/listado/5');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('inicio/cinco/0');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
      

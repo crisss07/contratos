@@ -22,9 +22,10 @@ class inicio extends CI_Controller {
 		else{
 			$data['cant'] = $this->contrato_model->contador();
 			$data['contrato'] = $this->contrato_model->getContrato();
-			$data['cont_cinco'] = $this->contrato_model->cont_cinco();
+			$data['cont_cinco'] = $this->contrato_model->cont_cincos();
 			$data['cont_quince'] = $this->contrato_model->cont_quince();
 			$data['cont_diez'] = $this->contrato_model->cont_diez();		
+			$data['cont_cero'] = $this->contrato_model->cont_cero();	
 			$this->load->view('common/header');
 			$this->load->view('common/sidebar');
 			$this->load->view('admin/inicio',$data);
@@ -40,7 +41,11 @@ class inicio extends CI_Controller {
 		else{
 			$data['cant'] = $this->contrato_model->contador();
 			$data['contrato'] = $this->contrato_model->getContrato();
-			$data['cinco'] = $this->contrato_model->cont_cinco($cantidad);		
+			$data['cinco'] = $this->contrato_model->cont_cinco($cantidad);	
+				$data['cont_cinco'] = $this->contrato_model->cont_cincos();
+			$data['cont_quince'] = $this->contrato_model->cont_quince();
+			$data['cont_diez'] = $this->contrato_model->cont_diez();		
+			$data['cont_cero'] = $this->contrato_model->cont_cero();	
 			$this->load->view('common/header');
 			$this->load->view('common/sidebar');
 			$this->load->view('admin/listado_5',$data);
