@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/_all-skins.min.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/custom.css');?>">
 </head>
-<body class="sidebar-mini wysihtml5-supported skin-purple sidebar-collapse fixed">
+<body class="sidebar-mini wysihtml5-supported skin-purple fixed">
   <div class="wrapper">
       <header class="main-header">
         <img src="<?php echo base_url('assets/img/head.png');?>">  
@@ -49,3 +49,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </nav>
     </header>
     
+    sidebar-mini wysihtml5-supported skin-purple fixed sidebar-mini-expand-feature sidebar-collapse
+
