@@ -35,6 +35,7 @@
                               <option disabled>Selecciona Categoria</option>
                               <option value="Ampliacion de Plazo" >Ampliacion de Plazo</option>
                               <option value="Ampliacion de Alcance">Ampliacion de Alcance</option>
+                              <option value="Otro">Otro</option>
                             </select>
                           </div>
                         </div>
