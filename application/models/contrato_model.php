@@ -16,22 +16,23 @@ class Contrato_model extends CI_Model {
 	}
 	function cont_cinco(){
 		$r = $this->db->query("SELECT COUNT(id_contrato),DATEDIFF(fin,now()) as dias  FROM contrato
-WHERE DATEDIFF(fin,now())=5");
+			WHERE DATEDIFF(fin,now())=5");
 		return $r->row();
 	}
 	function cont_diez(){
 		$r = $this->db->query("SELECT COUNT(id_contrato),DATEDIFF(fin,now()) as dias  FROM contrato
-WHERE DATEDIFF(fin,now())=10");
-		return $r->row();
+			WHERE DATEDIFF(fin,now())=10");
+		
 	}
 	function cont_quince(){
 		$r = $this->db->query("SELECT COUNT(id_contrato),DATEDIFF(fin,now()) as dias  FROM contrato
-WHERE DATEDIFF(fin,now())=15");
+			WHERE DATEDIFF(fin,now())=15");
 		return $r->row();
 	}
 	function cont_listado(){
 		$r = $this->db->query("SELECT c.*,DATEDIFF(fin,now()) as dias  FROM contrato c
-WHERE DATEDIFF(fin,now())=3
+		WHERE DATEDIFF(fin,now())=3");
+		return $r->row();
 	}
 }
 ?>
