@@ -32,7 +32,7 @@ class inicio extends CI_Controller {
 		}
 	}
 
-	public function cinco()
+	public function cinco($cantidad = NULL)
 	{
 		if (!$this->session->userdata('is_logued_in')) {
 			redirect('inicio/login','refresh');
@@ -40,7 +40,7 @@ class inicio extends CI_Controller {
 		else{
 			$data['cant'] = $this->contrato_model->contador();
 			$data['contrato'] = $this->contrato_model->getContrato();
-			$data['cinco'] = $this->contrato_model->cont_cinco();		
+			$data['cinco'] = $this->contrato_model->cont_cinco($cantidad);		
 			$this->load->view('common/header');
 			$this->load->view('common/sidebar');
 			$this->load->view('admin/listado_5',$data);

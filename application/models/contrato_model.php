@@ -14,14 +14,14 @@ class Contrato_model extends CI_Model {
 		$r = $this->db->query("SELECT COUNT(id_contrato) as total FROM contrato where estado=1");
 		return $r->row();
 	}
-	function cont_cinco(){
+	function cont_cinco($cantidad){
 
 		$r = $this->db->query("SELECT c.*,DATEDIFF(fin,now()) as dias  FROM contrato c
-		WHERE DATEDIFF(fin,now())=5");
+		WHERE DATEDIFF(fin,now())=$cantidad");
 		return $r->result();
 
 	}
-	
+
 	function cont_diez(){
 		$r = $this->db->query("SELECT COUNT(id_contrato)  as total FROM contrato
 			WHERE DATEDIFF(fin,now())=10");	
