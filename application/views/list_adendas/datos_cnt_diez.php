@@ -1,76 +1,7 @@
 
 <div class="content-wrapper">
   <section class="content">
-      <div class="row">
-        <div class="col-lg-2 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3><?php echo $cant->total; ?></h3>
-              <p>Registrados</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-folder"></i>
-            </div>           
-          </div>
-        </div>
-        <div class="col-lg-2 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-blue">
-            <div class="inner">
-              <h3><?php echo $cont_quince->total; ?></h3>
-              <p>Concluye en 15 Dias</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-folder"></i>
-            </div>
-            <a href="<?php echo base_url('detalle/listado/1');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3><?php echo $cont_diez->total; ?></h3>
-
-              <p>Concluye en 10 Dias</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-folder"></i>
-            </div>
-            <a href="<?php echo base_url('detalle_cont/cont_diez/');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3><?php echo $cont_cinco->total; ?></h3>
-
-              <p>concluye en 5 Dias</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-folder"></i>
-            </div>
-            <a href="<?php echo base_url('detalle/listado/3');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-light-blue">
-            <div class="inner">
-              <h3>0</h3>
-
-              <p>Concluida</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-folder"></i>
-            </div>
-            <a href="<?php echo base_url('detalle/listado/5');?>" class="small-box-footer">Ver Listado <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
      
-      </div>
       <div class="row">
         <!-- left column -->
         <div class="col-xs-12">
@@ -111,14 +42,14 @@
                     <td><?php echo $row->inicio;?></td>       
                     <td><?php echo $row->fin;?></td>
                     <td>
-                      <a href="<?php echo base_url('assets/respaldo/').$row->respaldo;?>" target="_blank"><span class="badge bg-green"><i class="fa fa-fw fa-file-pdf-o"></i><?php echo $row->no_contrato; ?></span></a>
+                      <a href="<?php echo base_url('assets/respaldo/').$row->respaldo;?>" target="_blank"><span class="badge bg-green"><i class=""><?php echo $row->no_contrato; ?></i></span></a>
                     </td>    
                     <td><?php $q=$this->db->query("SELECT respaldo,no_contrato FROM adenda where id_contrato=$row->id_contrato")->result();
                     if(($q)!=null){ ?>
                       <?php  
                     foreach ($q as $cnt) {
                       ?>
-                      <a href="<?php echo base_url('assets/respaldo/').$cnt->respaldo;?>" target="_blank"><span class="badge bg-light-blue"><i class="fa fa-fw fa-file-pdf-o"></i><?php echo $cnt->no_contrato; ?></span></a>
+                      <a href="<?php echo base_url('assets/respaldo/').$cnt->respaldo;?>" target="_blank"><span class="badge bg-light-blue"><i class=""><?php echo $cnt->no_contrato; ?></i></span></a>
                       
                       <?php
                     }                                          
@@ -133,8 +64,7 @@
                       <a href="<?php echo base_url('boleta/formulario/').$row->id_contrato;?>"><span class="badge bg-light-blue"><i class="fa fa-edit"></i></span></a>
                       <a href="<?php echo base_url('detalle_cont/adenda/').$row->id_contrato;?>"><span class="badge bg-light-green"><i class="fa fa-search"></i> Listado de Adendas</span></a>
                       <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>"><span class="badge bg-green"><i class="fa fa-plus"></i> Agregar Adenda</span></a>
-                      <span class="badge bg-red eliminar2" data-id="<?php echo base_url('boleta/del_boleta/').$row->id_contrato;?>"><i class="fa fa-trash"></i></span>
-                    
+                      <span class="badge bg-red eliminar2" data-id="<?php echo base_url('boleta/del_boleta/').$row->id_contrato;?>"><i class="fa fa-trash"></i></span>                    
                     </td>
                   </tr>
                  

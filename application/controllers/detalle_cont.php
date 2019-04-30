@@ -9,6 +9,7 @@ class Detalle_cont extends CI_Controller {
 		$this->load->model('vigencias_model');
 		$this->load->model('usuario_model');
 		$this->load->model('dashboard_model');
+		$this->load->model('contrato_model');
 		$this->load->helper('form');
 		$this->load->database('default');
 		$this->load->library('encrypt');
@@ -45,6 +46,17 @@ class Detalle_cont extends CI_Controller {
 		$this->load->view('common/header');
 		$this->load->view('common/sidebar');
 		$this->load->view('list_adendas/datos_contrato',$data);
+		$this->load->view('common/footer');
+	}
+
+	public function cont_diez()
+	{	
+		if (!$this->session->userdata('is_logued_in'))
+		redirect('inicio/login','refresh');		
+		$data['contrato'] = $this->contrato_model->cont_list_diez();		
+		$this->load->view('common/header');
+		$this->load->view('common/sidebar');
+		$this->load->view('list_adendas/datos_cnt_diez',$data);
 		$this->load->view('common/footer');
 	}
 }
