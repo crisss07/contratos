@@ -100,7 +100,7 @@
                 </thead>
                 <tbody>
                    <?php $i=1;?>
-                 <?php foreach ($contrato as $row) {?>
+                 <?php foreach ($cinco as $row) {?>
                   <tr>
                     <td><?php echo $i++; ?></td>
                     <td><?php echo $row->tipo;?></td>
