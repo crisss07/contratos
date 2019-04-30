@@ -31,12 +31,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="<?php echo base_url('detalle/listado/6');?>"><i class="fa fa-circle-o"></i> No Liberadas</a></li>
-              <li><a href="<?php echo base_url('detalle/listado/5');?>"><i class="fa fa-circle-o"></i> Liberadas</a></li>
-              <li><a href="<?php echo base_url('detalle/listado/4');?>"><i class="fa fa-circle-o"></i> Normal</a></li>
-              <li><a href="<?php echo base_url('detalle/listado/1');?>"><i class="fa fa-circle-o"></i> 15 Dias</a></li>
-              <li><a href="<?php echo base_url('detalle/listado/2');?>"><i class="fa fa-circle-o"></i> 10 Dias</a></li>
-              <li><a href="<?php echo base_url('detalle/listado/3');?>"><i class="fa fa-circle-o"></i> 5 Dias</a></li>
+      
+              <li><a href="<?php echo base_url('inicio/cinco/15');?>"><i class="fa fa-circle-o"></i> 15 Dias</a></li>
+              <li><a href="<?php echo base_url('inicio/cinco/10');?>"><i class="fa fa-circle-o"></i> 10 Dias</a></li>
+              <li><a href="<?php echo base_url('inicio/cinco/5');?>"><i class="fa fa-circle-o"></i> 5 Dias</a></li>
             </ul>
           </li>
           <li>

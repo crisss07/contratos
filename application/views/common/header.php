@@ -22,8 +22,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <header class="main-header">
         <img src="<?php echo base_url('assets/img/head.png');?>">  
         <a href="#" class="logo">
-          <span class="logo-mini"><b>SCON</b></span>
-          <span class="logo-lg"><b>SCON</b></span>
+          <span class="logo-mini"><b>SICON</b></span>
+          <span class="logo-lg"><b>SICON</b></span>
         </a>
         <nav class="navbar navbar-static-top">
           <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">

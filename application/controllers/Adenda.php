@@ -22,6 +22,7 @@ class Adenda extends CI_Controller {
 		}
 		else{
 
+
 		$data['contrato'] = $this->db->query("SELECT *
 										FROM contrato
 										WHERE id_contrato = $id")->row();
@@ -43,6 +44,18 @@ class Adenda extends CI_Controller {
 		}
 		else{
 			$datos = $this->input->post();
+
+			$pdf = '';
+		$conf_file = array(
+			'upload_path' => './assets/respaldo',
+			'allowed_types'	=> 'pdf',
+			'encrypt_name' => true
+		);
+		$this->load->library('upload',$conf_file);
+		if($this->upload->do_upload("res")){
+			$data = array('upload_data' => $this->upload->data());
+			$pdf = $data['upload_data']['file_name'];
+		}
 			
 			if(isset($datos))
 			{
@@ -60,7 +73,7 @@ class Adenda extends CI_Controller {
 				$inicio = $datos['ini'];
 				$fin = $datos['fin'];
 				$id_contrato = $datos['id_contrato'];
-				$respaldo = $datos['respaldo'];
+				$respaldo = $pdf;
 				$forma_pago = $datos['forma_pago'];
 				
 
