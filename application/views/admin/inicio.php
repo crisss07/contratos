@@ -86,15 +86,14 @@
                 <tr>
                   <th>#</th>
                   <th>Tipo</th>
-                  <th>Beneficiario</th>
-                  <th>Empresa</th>
-                  <th>Fuente</th>
-                  <th>nro contrato</th>
+                  <th>Beneficiario</th>                 
+                  <th>Fuente</th>                  
                   <th>Moneda</th>
                   <th>Monto</th>
                   <th>Objeto</th>
                   <th>Inicio</th>
                   <th>Fin</th>
+                  <th>nro contrato</th>
                   <th>Total Adendas</th>
                   <th>Opciones</th>
                 </tr>
@@ -105,16 +104,31 @@
                   <tr>
                     <td><?php echo $i++; ?></td>
                     <td><?php echo $row->tipo;?></td>
-                    <td><?php echo $row->beneficiario;?></td>
-                    <td><?php echo $row->empresa;?></td>
-                    <td><?php echo $row->ent_financiera;?></td>
-                    <td><?php echo $row->no_contrato;?></td>
+                    <td><?php echo $row->beneficiario;?></td>              
+                    <td><?php echo $row->ent_financiera;?></td>                    
                     <td><?php echo $row->moneda;?></td>
                     <td><?php echo $row->monto;?></td>
                     <td><?php echo $row->objeto;?></td>
                     <td><?php echo $row->inicio;?></td>       
-                    <td><?php echo $row->fin;?></td>    
-                    <td>5</td>           
+                    <td><?php echo $row->fin;?></td>
+                    <td>
+                      <a href="<?php echo base_url('assets/respaldo/').$row->respaldo;?>" target="_blank"><span class="badge bg-green"><i class=""><?php echo $row->no_contrato; ?></i></span></a>
+                    </td>    
+                    <td><?php $q=$this->db->query("SELECT respaldo,no_contrato FROM adenda where id_contrato=$row->id_contrato")->result();
+                    if(($q)!=null){ ?>
+                      <?php  
+                    foreach ($q as $cnt) {
+                      ?>
+                      <a href="<?php echo base_url('assets/respaldo/').$cnt->respaldo;?>" target="_blank"><span class="badge bg-light-blue"><i class=""><?php echo $cnt->no_contrato; ?></i></span></a>
+                      
+                      <?php
+                    }                                          
+                    }else
+                    {
+                      echo 'NO';
+                    }
+
+                    ?></td>           
                     <td>
                       <a href="<?php echo base_url('detalle_cont/contrato/').$row->id_contrato;?>"><span class="badge bg-light-green"><i class="fa fa-search"></i></span></a>                    
                       <a href="<?php echo base_url('boleta/formulario/').$row->id_contrato;?>"><span class="badge bg-light-blue"><i class="fa fa-edit"></i></span></a>
