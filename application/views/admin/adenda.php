@@ -5,7 +5,8 @@
 
   <!-- Main content -->
   <section class="content">
-   <?php echo form_open('Adenda/insertar', array('method'=>'POST')); ?>
+  <!-- <?php echo form_open('Adenda/insertar', array('method'=>'POST')); ?>-->
+   <?php $att = array('id' => 'formBR','class'=>'','autocomplete'=>'off','enctype'=>'multipart/form-data'); echo form_open('Adenda/insertar',$att); ?>
       <div class="row">
         <!-- left column -->
         <div class="col-md-12">
@@ -76,7 +77,7 @@
                     </div>
                     <div class="col-sm-6">
           					    <label>Respaldo PDF:</label>
-          					    <input type="file" accept="application/pdf" size="5" class="form-control" id="respaldo" name="respaldo" placeholder="Agregar Respaldo">
+          					    <input type="file" accept="application/pdf" size="5" class="form-control" id="res" name="res" placeholder="Agregar Respaldo">
           					</div>
 
                      <div class="col-sm-6">

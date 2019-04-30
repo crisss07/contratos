@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
   <div class="login-logo">
     <a href="#"><b>SISTEMA DE CONTRATOS</b></a>
     <br>
-    <a href="#">SCON
+    <a href="#">SICON
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
