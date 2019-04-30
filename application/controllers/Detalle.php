@@ -11,6 +11,8 @@ class Detalle extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->database('default');
 		$this->load->library('encrypt');
+		$this->load->helper('vayes_helper');
+
 	}
 	public function index()
 	{	
@@ -27,12 +29,17 @@ class Detalle extends CI_Controller {
 	}
 	public function listado()
 	{	
+
 		if (!$this->session->userdata('is_logued_in'))
 			redirect('inicio/login','refresh');
-		$data = array(
-			'boletas' => $this->boletas_model->getBoletas(),
-			'tipo'=>$this->uri->segment(3)
-		);
+		// $data = array(
+		// 	'boletas' => $this->boletas_model->getBoletas(),
+		// 	'tipo'=>$this->uri->segment(3)
+		// );
+		$r = $this->db->query("SELECT * FROM contrato WHERE DATEDIFF(fin, now())=15");
+		$data['quince'] = $r->result_array();
+		// vdebug($data['quince'], true, false, true);
+
 		$this->load->view('common/header');
 		$this->load->view('common/sidebar');
 		$this->load->view('admin/listado',$data);
