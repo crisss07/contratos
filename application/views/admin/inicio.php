@@ -129,10 +129,11 @@
 
                     ?></td>           
                     <td>
-                      <a href="<?php echo base_url('detalle_cont/contrato/').$row->id_contrato;?>"><span class="badge bg-light-green"><i class="fa fa-search"></i></span></a>                    
-                    
-                      <a href="<?php echo base_url('detalle_cont/adenda/').$row->id_contrato;?>"><span class="badge bg-light-green"><i class="fa fa-search"></i> Listado de Adendas</span></a>
-                      <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>"><span class="badge bg-green"><i class="fa fa-plus"></i> Agregar Adenda</span></a>
+                      <a href="<?php echo base_url('contratos/editar/').$row->id_contrato;?>"><span class="badge bg-yellow"><i class="fa fa-edit"></i> Editar</span></a>                    
+                      <?php if ($q): ?>
+                        <a href="<?php echo base_url('detalle_cont/adenda/').$row->id_contrato;?>"><span class="badge bg-light-blue"><i class="fa fa-list"></i> Adendas</span></a>
+                      <?php endif ?>
+                      <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>"><span class="badge bg-green"><i class="fa fa-plus"></i> Adenda</span></a>
                                         
                     </td>
                   </tr>

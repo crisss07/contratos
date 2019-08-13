@@ -15,6 +15,7 @@ class Contratos extends CI_Controller {
 		$this->load->helper('vayes_helper');
 	}
 	public function nuevo(){
+
 		if (!$this->session->userdata('is_logued_in'))
 			redirect('inicio/login','refresh');
 		$data =array(
@@ -299,5 +300,22 @@ class Contratos extends CI_Controller {
 	    }
 
 		//$this->load->library('PHPMailerAutoload');
+	}
+
+	public function editar($idContrato = null){
+
+		if (!$this->session->userdata('is_logued_in'))
+			redirect('inicio/login','refresh');
+
+		$data['contrato']=$this->db->get_where('contrato', array('id_contrato'=>$idContrato));
+		vdebug($data['contrato'], true, false, true);
+
+		$data =array(
+			'tipo'=>'reg'
+		);
+		$this->load->view('common/header');
+		$this->load->view('common/sidebar');
+		$this->load->view('contratos/nuevo', $data);
+		$this->load->view('common/footer', $data);
 	}
 }
