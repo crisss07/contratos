@@ -159,6 +159,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   $(function () {
     $('#example1').DataTable({
       responsive: true,
+      order: [[0, 'desc']],
       language: {
           "sProcessing":     "Procesando...",
           "sLengthMenu":     "Mostrar _MENU_ registros",
