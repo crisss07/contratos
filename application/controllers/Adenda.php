@@ -13,6 +13,7 @@ class Adenda extends CI_Controller {
 		$this->load->database('default');
 		$this->load->library('encrypt');
 		$this->load->library('user_agent');
+		$this->load->helper('vayes_helper');
 	}
 	
 	//NUEVA ADENDA
@@ -321,5 +322,14 @@ class Adenda extends CI_Controller {
 	    }
 
 		//$this->load->library('PHPMailerAutoload');
+	}
+
+	public function listado($idContrato = null){
+		$data['detalle_adenda'] = $this->db->get_where('adenda', array('id_contrato'=>$idContrato))->result();
+		// vdebug($adendas, true, false, true);
+		$this->load->view('common/header');
+		$this->load->view('common/sidebar');
+		$this->load->view('adendas/listado', $data);
+		$this->load->view('common/footer', $data);
 	}
 }

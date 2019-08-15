@@ -1,4 +1,3 @@
-
 <div class="content-wrapper">
   <section class="content">
       <div class="row">
@@ -92,8 +91,8 @@
                   <th>Objeto</th>
                   <th>Inicio</th>
                   <th>Fin</th>
-                  <th>nro contrato</th>
-                  <th>Total Adendas</th>
+                  <th>Contrato</th>
+                  <th>Adendas</th>
                   <th>Opciones</th>
                 </tr>
                 </thead>
@@ -111,30 +110,49 @@
                     <td><?php echo $row->inicio;?></td>       
                     <td><?php echo $row->fin;?></td>
                     <td>
-                      <a href="<?php echo base_url('assets/respaldo/').$row->respaldo;?>" target="_blank"><span class="badge bg-green"><i class=""><?php echo $row->no_contrato; ?></i></span></a>
+                      <?php if ($row->respaldo): ?>
+                        <a href="<?php echo base_url('assets/respaldo/').$row->respaldo;?>" target="_blank"><span class="badge bg-green"><i class=""><?php echo $row->no_contrato; ?></i></span></a>
+                      <?php else: ?>
+                        <span class="badge bg-yellow"><i class=""><?php echo $row->no_contrato; ?></i></span>
+                      <?php endif ?>
                     </td>    
-                    <td><?php $q=$this->db->query("SELECT respaldo,no_contrato FROM adenda where id_contrato=$row->id_contrato")->result();
-                    if(($q)!=null){ ?>
-                      <?php  
-                    foreach ($q as $cnt) {
+                    <td>
+                      <?php 
+                        $q=$this->db->query("SELECT respaldo,no_contrato FROM adenda where id_contrato=$row->id_contrato")->result();
+                          if(($q)!=null){ ?>
+                      <?php 
+                        $contadorAdendas=1; 
+                        foreach ($q as $cnt) {
+                          if($cnt->respaldo){
                       ?>
-                      <a href="<?php echo base_url('assets/respaldo/').$cnt->respaldo;?>" target="_blank"><span class="badge bg-light-blue"><i class=""><?php echo $cnt->no_contrato; ?></i></span></a>
-                      
+                      <a href="<?php echo base_url('assets/respaldo/').$cnt->respaldo;?>" target="_blank"><span class="badge bg-light-blue"><i class=""><?php echo $contadorAdendas; ?></i></span></a>
+                      <?php 
+                        }else{
+                      ?>
+                      <span class="badge bg-light-yellow"><i class=""><?php echo $contadorAdendas; ?></i></span>
+                      <?php                          
+                        } 
+                      ?>
                       <?php
-                    }                                          
+
+                        $contadorAdendas++;
+                      }                                          
                     }else
                     {
-                      echo 'NO';
+                      echo 'N/T';
                     }
 
                     ?></td>           
                     <td>
                       <a href="<?php echo base_url('contratos/editar/').$row->id_contrato;?>"><span class="badge bg-yellow"><i class="fa fa-edit"></i> Editar</span></a>                    
                       <?php if ($q): ?>
-                        <a href="<?php echo base_url('detalle_cont/adenda/').$row->id_contrato;?>"><span class="badge bg-light-blue"><i class="fa fa-list"></i> Adendas</span></a>
+                        <a href="<?php echo base_url('adenda/listado/').$row->id_contrato;?>"><span class="badge bg-light-blue"><i class="fa fa-list"></i> Adendas</span></a>
                       <?php endif ?>
                       <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>"><span class="badge bg-green"><i class="fa fa-plus"></i> Adenda</span></a>
-                                        
+
+                      <span class="badge bg-red" onclick="if(confirm('consulta?')==true)elimina(<?php echo $row->id_contrato; ?>)"><i class="fa fa-times"></i> Eliminarc</span>
+
+                      <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>"><span class="badge bg-red"><i class="fa fa-times"></i> Eliminar</span></a>
                     </td>
                   </tr>
                  
@@ -193,3 +211,10 @@
       <!-- /.modal-content -->
   </div>
 </div>
+<script type="text/javascript">
+  function elimina(id_contrato){
+    // url = "<?php echo base_url('/elimina/');?>"+id_contrato;
+    // alert(url);
+    window.location(url);
+  }
+</script>

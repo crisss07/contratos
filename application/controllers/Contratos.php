@@ -104,7 +104,6 @@ class Contratos extends CI_Controller {
 
 	public function guarda_contrato()
 	{
-		// vdebug($this->input->post(), true, false, true);
 		$pdf = '';
 		$conf_file = array(
 			'upload_path' => './assets/respaldo',
@@ -307,15 +306,60 @@ class Contratos extends CI_Controller {
 		if (!$this->session->userdata('is_logued_in'))
 			redirect('inicio/login','refresh');
 
-		$data['contrato']=$this->db->get_where('contrato', array('id_contrato'=>$idContrato));
-		vdebug($data['contrato'], true, false, true);
+		$data['contrato']=$this->db->get_where('contrato', array('id_contrato'=>$idContrato))->row();
+		// vdebug($data['contrato'], true, false, true);
 
-		$data =array(
-			'tipo'=>'reg'
-		);
+		$data['tipo']='reg';
 		$this->load->view('common/header');
 		$this->load->view('common/sidebar');
-		$this->load->view('contratos/nuevo', $data);
+		$this->load->view('contratos/editar', $data);
 		$this->load->view('common/footer', $data);
 	}
+
+	public function guarda_edicion(){
+
+		$pdf = '';
+		$conf_file = array(
+			'upload_path' => './assets/respaldo',
+			'allowed_types'	=> 'pdf',
+			'encrypt_name' => true
+		);
+		$this->load->library('upload',$conf_file);
+		if($this->upload->do_upload("res")){
+			$data = array('upload_data' => $this->upload->data());
+			$pdf = $data['upload_data']['file_name'];
+		}
+
+		if($this->upload->do_upload('res')){
+			$archivo_local = $pdf;
+		}else{
+			$archivo_local = $this->input->post('archivo_existente');
+		}
+
+		$this->db->where('id_contrato', $this->input->post('idContrato'));
+
+		$data = array(
+			'tipo'=>$this->input->post('tipo'),
+			'beneficiario'=>$this->input->post('afi'),
+			'empresa'=>$this->input->post('emp'),
+			'ent_financiera'=>$this->input->post('fuente'),
+			'no_contrato'=>$this->input->post('npl'),
+			'monto'=>$this->input->post('bs'),
+			'moneda'=>$this->input->post('moneda'),
+			'objeto'=>$this->input->post('obj'),
+			'supervision'=>$this->input->post('super'),
+			'inicio'=>$this->input->post('ini'),
+			'respaldo'=> $archivo_local,
+			'fin'=>$this->input->post('fin'),
+			// 'forma_pago'=>$this->input->post('forma_pago'),
+		);
+
+		$this->db->update('contrato', $data);
+		redirect(base_url('inicio/index'));
+	}
+
+	public function elimina($idContrato){
+		vdebug($idContrato ,true, false, true);
+	}
+
 }

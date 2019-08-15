@@ -5,11 +5,11 @@ class Detalle_cont extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->library(array('session','form_validation'));
-		$this->load->model('boletas_model');
-		$this->load->model('vigencias_model');
-		$this->load->model('usuario_model');
-		$this->load->model('dashboard_model');
-		$this->load->model('contrato_model');
+		$this->load->model('Boletas_model');
+		$this->load->model('Vigencias_model');
+		$this->load->model('Usuario_model');
+		$this->load->model('Dashboard_model');
+		$this->load->model('Contrato_model');
 		$this->load->helper('form');
 		$this->load->database('default');
 		$this->load->library('encrypt');

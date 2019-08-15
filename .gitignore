@@ -25,6 +25,8 @@ assets/
 /nbproject/
 .idea/*
 
+.phpintel/*
+
 ## Sublime Text cache files
 *.tmlanguage.cache
 *.tmPreferences.cache
