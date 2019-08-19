@@ -144,21 +144,22 @@
 
                     ?></td>           
                     <td>
-                      <a href="<?php echo base_url('contratos/editar/').$row->id_contrato;?>"><span class="badge bg-yellow"><i class="fa fa-edit"></i> Editar</span></a>                    
+                      <a href="<?php echo base_url('contratos/editar/').$row->id_contrato;?>" title="Edita el contrato"><span class="badge bg-yellow"><i class="fa fa-edit"></i> Editar</span></a>                    
                       <?php if ($q): ?>
-                        <a href="<?php echo base_url('adenda/listado/').$row->id_contrato;?>"><span class="badge bg-light-blue"><i class="fa fa-list"></i> Adendas</span></a>
+                        <a href="<?php echo base_url('adenda/listado/').$row->id_contrato;?>" title="Lista las adendas del contrato"><span class="badge bg-light-blue"><i class="fa fa-list"></i> Listado Adendas</span></a>
                       <?php endif ?>
-                      <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>"><span class="badge bg-green"><i class="fa fa-plus"></i> Adenda</span></a>
+                      <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>" title="Registra nueva adenda"><span class="badge bg-green"><i class="fa fa-plus"></i> Adenda</span></a>
 
-                      <span class="badge bg-red" onclick="if(confirm('consulta?')==true)elimina(<?php echo $row->id_contrato; ?>)"><i class="fa fa-times"></i> Eliminarc</span>
+                      <span class="badge bg-red" onclick="elimina_contrato(<?php echo $row->id_contrato; ?>)"  title="Elimina contrato"><i class="fa fa-times"></i> Eliminar</span>
 
-                      <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>"><span class="badge bg-red"><i class="fa fa-times"></i> Eliminar</span></a>
                     </td>
                   </tr>
                  
-                <?php }?>  
+                <?php } ?>  
                 </tbody>
               </table>
+
+
             </div>
           </div>
         </div>
@@ -212,9 +213,13 @@
   </div>
 </div>
 <script type="text/javascript">
-  function elimina(id_contrato){
-    // url = "<?php echo base_url('/elimina/');?>"+id_contrato;
-    // alert(url);
-    window.location(url);
+  var id_contrato;
+  function elimina_contrato(id_contrato){
+    if(confirm('Desea eliminar el contrato?')==true){
+      url = "<?php echo base_url('/contratos/elimina/');?>"+id_contrato;
+      // console.log(url);
+      // window.location(url);
+      window.location.replace(url);
+    }
   }
 </script>

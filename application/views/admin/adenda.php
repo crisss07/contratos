@@ -62,15 +62,16 @@
                       <label for="exampleInputPassword1">Monto:</label>
                       <div class="row">
                         <div class="col-sm-6">
-                          <input type="text" class="form-control" id="monto" name="monto" placeholder="Monto" required>
+                          <?php //vdebug($contrato, false, false, true) ?>
+                          <input type="text" class="form-control" id="monto" name="monto" placeholder="Monto" value="<?php echo $contrato->monto; ?>" required>
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group">
                             <select id="moneda" name="moneda" class="form-control" required>
                               <option disabled selected>Selecciona Moneda</option>
-                              <option value="BS">BS</option>
-                              <option value="USD">USD</option>
-                              <option value="EUR">EUR</option>
+                              <option value="BS" <?php echo ($contrato->moneda == "BS")?'selected':'' ?>>BS</option>
+                              <option value="USD" <?php echo ($contrato->moneda == "USD")?'selected':'' ?>>USD</option>
+                              <option value="EUR" <?php echo ($contrato->moneda == "EUR")?'selected':'' ?>>EUR</option>
                             </select>
                           </div>
                         </div>
@@ -110,26 +111,27 @@
             <div class="col-md-6">
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Vigencia</h3>
+                  <h3 class="box-title">Vigencia  </h3>
                 </div>
-                <div class="box-body">
-                    <div class="form-group">
-                      <label>Rango de Fechas</label>
-                      <div class="input-group">
-                        <div class="input-group-addon">
-                          <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type="text" class="form-control pull-right" id="vig" name="vig">
-                        <input type="text" id="ini" name="ini" hidden="" value="" required>
-                        <input type="text" id="fin" name="fin" hidden="" value="" required>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="box-body">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Inicio: </label>
+                        <input type="date" class="form-control" id="obj" name="ini" required>
                       </div>
-                      <!-- /.input group -->
                     </div>
+                  </div>
 
-                  
-                    <div class="box-footer">
-                      <button type="submit" class="btn btn-primary">Guardar</button>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Fin: </label>
+                      <input type="date" class="form-control" id="super" name="fin" required>
                     </div>
+                  </div>  
+                </div>
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
                 <!-- /.box-body -->
               </div>

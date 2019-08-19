@@ -25,7 +25,8 @@
                   <th>Objeto</th>
                   <th>Inicio</th>
                   <th>Fin</th>
-                  
+                  <th>Adjunto</th>
+                  <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -43,8 +44,17 @@
                     <td><?php echo $row->objeto;?></td>
                     <td><?php echo $row->inicio;?></td>       
                     <td><?php echo $row->fin;?></td>    
+                    <td>
+                      <?php if ($row->respaldo): ?>
+                        SI
+                      <?php else: ?>
+                        NO
+                      <?php endif ?>
+                    </td>    
+                    <td>
+                      <span class="badge bg-red" onclick="elimina_adenda(<?php echo $row->id_adenda; ?>,<?php echo $row->id_contrato; ?>)" title="Elimina adenda"><i class="fa fa-times"></i> Eliminar</span>
+                    </td>    
                   </tr>
-                 
                 <?php }?>  
                 </tbody>
               </table>
@@ -101,3 +111,14 @@
       <!-- /.modal-content -->
   </div>
 </div>
+<script type="text/javascript">
+  var id_contrato;
+  function elimina_adenda(id_adenda, id_contrato){
+    if(confirm('Desea eliminar el adenda ?')==true){
+      url = "<?php echo base_url('/adenda/elimina_adenda/');?>"+id_adenda+'/'+id_contrato;
+      // console.log(url);
+      // window.location(url);
+      window.location.replace(url);
+    }
+  }
+</script>

@@ -57,10 +57,8 @@ class Adenda extends CI_Controller {
 			$data = array('upload_data' => $this->upload->data());
 			$pdf = $data['upload_data']['file_name'];
 		}
-			
 			if(isset($datos))
 			{
-				
 				$tipo = $datos['tipo'];
 				$categoria = $datos['categoria'];
 				$beneficiario = $datos['beneficiario'];
@@ -332,4 +330,12 @@ class Adenda extends CI_Controller {
 		$this->load->view('adendas/listado', $data);
 		$this->load->view('common/footer', $data);
 	}
+
+	public function elimina_adenda($idAdenda, $idContrato){
+		// vdebug($idAdenda, true, false, true);
+		$this->db->where('id_adenda', $idAdenda);
+		$this->db->delete('adenda');
+		redirect(base_url("adenda/listado/$idContrato"));
+	}
+
 }

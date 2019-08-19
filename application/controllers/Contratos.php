@@ -26,6 +26,7 @@ class Contratos extends CI_Controller {
 		$this->load->view('contratos/nuevo', $data);
 		$this->load->view('common/footer', $data);
 	}
+	
 	public function formulario(){
 		if (!$this->session->userdata('is_logued_in'))
 			redirect('inicio/login','refresh');
@@ -107,6 +108,7 @@ class Contratos extends CI_Controller {
 		$pdf = '';
 		$conf_file = array(
 			'upload_path' => './assets/respaldo',
+			'max_size' => '51200',
 			'allowed_types'	=> 'pdf',
 			'encrypt_name' => true
 		);
@@ -115,6 +117,9 @@ class Contratos extends CI_Controller {
 			$data = array('upload_data' => $this->upload->data());
 			$pdf = $data['upload_data']['file_name'];
 		}
+		$fecha_inicio = $this->input->post('ini'); 
+		$fecha_fin = $this->input->post('fin');
+		// vdebug($fecha_inicio, true, false, true);
 
 		$data = array(
 			'tipo'=>$this->input->post('tipo'),
@@ -126,9 +131,9 @@ class Contratos extends CI_Controller {
 			'moneda'=>$this->input->post('moneda'),
 			'objeto'=>$this->input->post('obj'),
 			'supervision'=>$this->input->post('super'),
-			'inicio'=>$this->input->post('ini'),
 			'respaldo'=> $pdf,
-			'fin'=>$this->input->post('fin'),
+			'inicio'=>$fecha_inicio.' 00:00:00',
+			'fin'=>$fecha_fin.' 23:59:59'
 			// 'forma_pago'=>$this->input->post('forma_pago'),
 		);
 		$this->db->insert('contrato', $data);
@@ -239,10 +244,6 @@ class Contratos extends CI_Controller {
 		);
 		$resultado2 = $this->vigencias_model->delVigencia($valores2);
 		redirect(base_url('boleta/formulario/').$this->input->post('id_bue'),'refresh');
-	}
-
-	public function holas(){
-		echo 'Holas desde code';
 	}
 
 	public function envia(){
@@ -359,7 +360,10 @@ class Contratos extends CI_Controller {
 	}
 
 	public function elimina($idContrato){
-		vdebug($idContrato ,true, false, true);
+		// vdebug($idContrato ,true, false, true);
+		$this->db->where('id_contrato', $idContrato);
+		$this->db->delete('contrato');
+		redirect(base_url('inicio/index'));
 	}
 
 }
