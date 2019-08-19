@@ -93,6 +93,7 @@
                   <th>Fin</th>
                   <th>Contrato</th>
                   <th>Adendas</th>
+                  <th>Bloq.</th>
                   <th>Opciones</th>
                 </tr>
                 </thead>
@@ -107,8 +108,19 @@
                     <td><?php echo $row->moneda;?></td>
                     <td><?php echo $row->monto;?></td>
                     <td><?php echo $row->objeto;?></td>
-                    <td><?php echo $row->inicio;?></td>       
-                    <td><?php echo $row->fin;?></td>
+                    <td>
+                      <?php 
+                        // echo $row->inicio;
+                        $fecha_inicio = explode(" ",$row->inicio);
+                        echo $fecha_inicio[0];
+                      ?>
+                    </td>       
+                    <td>
+                      <?php 
+                        $fecha_fin = explode(" ",$row->fin);
+                        echo $fecha_fin[0];
+                      ?>
+                    </td>
                     <td>
                       <?php if ($row->respaldo): ?>
                         <a href="<?php echo base_url('assets/respaldo/').$row->respaldo;?>" target="_blank"><span class="badge bg-green"><i class=""><?php echo $row->no_contrato; ?></i></span></a>
@@ -143,12 +155,25 @@
                     }
 
                     ?></td>           
+                    <td><?php echo $row->bloqueado;?></td>
                     <td>
-                      <a href="<?php echo base_url('contratos/editar/').$row->id_contrato;?>" title="Edita el contrato"><span class="badge bg-yellow"><i class="fa fa-edit"></i> Editar</span></a>                    
+                      <?php if ($row->bloqueado == "NO"): ?>
+                        <a href="<?php echo base_url('contratos/editar/').$row->id_contrato;?>" title="Edita el contrato"><span class="badge bg-yellow"><i class="fa fa-edit"></i> Editar</span></a>                    
+                      <?php else: ?>
+                        <a href="<?php echo base_url('contratos/editar/').$row->id_contrato;?>" title="Edita el contrato"><span class="badge bg-green"><i class="fa fa-file-o"></i> Ver</span></a>                    
+                      <?php endif ?>
                       <?php if ($q): ?>
                         <a href="<?php echo base_url('adenda/listado/').$row->id_contrato;?>" title="Lista las adendas del contrato"><span class="badge bg-light-blue"><i class="fa fa-list"></i> Listado Adendas</span></a>
                       <?php endif ?>
+                      <?php $idContrato = $row->id_contrato; ?>
                       <a href="<?php echo base_url('adenda/nuevo');?>/<?php echo $row->id_contrato;?>" title="Registra nueva adenda"><span class="badge bg-green"><i class="fa fa-plus"></i> Adenda</span></a>
+                      
+                      <?php if ($row->bloqueado == "NO"): ?>
+                        <a href="<?php echo base_url("contratos/bloquea/$idContrato");?>/NO" class="badge bg-light-blue" title="Bloquea el contrato"><i class="fa fa-unlock"></i> </a>
+                      <?php else: ?>
+                        <a href="<?php echo base_url("contratos/bloquea/$idContrato");?>/SI" class="badge bg-red" title="Bloquea el contrato"><i class="fa fa-lock"></i> </a>
+                      <?php endif ?>
+
 
                       <span class="badge bg-red" onclick="elimina_contrato(<?php echo $row->id_contrato; ?>)"  title="Elimina contrato"><i class="fa fa-times"></i> Eliminar</span>
 

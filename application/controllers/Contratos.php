@@ -366,4 +366,20 @@ class Contratos extends CI_Controller {
 		redirect(base_url('inicio/index'));
 	}
 
+	public function bloquea($id_contrato = null, $estado = null){
+
+		$this->db->where('id_contrato', $id_contrato);
+		if ($estado == 'NO') {
+			$data = array(
+				'bloqueado'=>"SI"
+			);
+		} else {
+			$data = array(
+				'bloqueado'=>"NO"
+			);
+		}
+		$this->db->update('contrato', $data);
+		redirect(base_url('inicio/index'));
+	}
+
 }
